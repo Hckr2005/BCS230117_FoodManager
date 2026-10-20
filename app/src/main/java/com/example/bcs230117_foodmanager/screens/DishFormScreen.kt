@@ -243,7 +243,7 @@ private fun CategoryDropdown(
     onSelected: (Long) -> Unit
 ) {
     var expanded by remember { mutableStateOf(false) }
-    val selectedName = categories.firstOrNull { it.id == selectedId }?.name.orEmpty()
+    val selectedName = categoryDisplayName(categories.firstOrNull { it.id == selectedId }?.name.orEmpty())
 
     Box(Modifier.fillMaxWidth()) {
         OutlinedTextField(
@@ -263,7 +263,7 @@ private fun CategoryDropdown(
         DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
             categories.forEach { category ->
                 DropdownMenuItem(
-                    text = { Text(category.name) },
+                    text = { Text(categoryDisplayName(category.name)) },
                     onClick = {
                         onSelected(category.id)
                         expanded = false

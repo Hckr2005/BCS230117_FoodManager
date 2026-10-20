@@ -4,7 +4,7 @@ import android.util.Patterns
 import androidx.room.withTransaction
 import kotlinx.coroutines.flow.Flow
 
-/** Các mã lỗi nghiệp vụ. Giao diện sẽ dịch sang chữ ở Bước 8. */
+/** Các mã lỗi nghiệp vụ. Giao diện sẽ dịch sang chữ theo ngôn ngữ đang chọn. */
 enum class ValidationError {
     NAME_EMPTY,
     PRICE_INVALID,
@@ -63,12 +63,20 @@ class FoodRepository(private val db: AppDatabase) {
         }
     }
 
-    /** Không cho xóa loại đang có món. */
+    /**
+     * Không cho xóa loại đang có món.
+     * Loại chưa có trên MockAPI thì xóa luôn; loại đã có thì xóa mềm, đồng bộ xong mới xóa thật.
+     */
     suspend fun deleteCategory(categoryId: Long): RepoResult<Unit> {
         val category = categoryDao.getById(categoryId) ?: return fail(ValidationError.NOT_FOUND)
+        if (category.syncStatus == SyncStatus.DELETED) return fail(ValidationError.NOT_FOUND)
         if (categoryDao.countDishes(categoryId) > 0) return fail(ValidationError.CATEGORY_IN_USE)
         return try {
-            categoryDao.delete(category)
+            if (category.remoteId == null) {
+                categoryDao.delete(category)
+            } else {
+                categoryDao.update(category.copy(syncStatus = SyncStatus.DELETED))
+            }
             RepoResult.Success(Unit)
         } catch (e: Exception) {
             // Ràng buộc khóa ngoại RESTRICT là lớp bảo vệ thứ hai
@@ -102,7 +110,7 @@ class FoodRepository(private val db: AppDatabase) {
         }
         if (errors.isNotEmpty()) return RepoResult.Failure(errors)
 
-        // Mọi thay đổi đều đánh dấu PENDING để Bước 9 đồng bộ lên MockAPI
+        // Mọi thay đổi đều đánh dấu PENDING để tự đồng bộ lên MockAPI
         val toSave = dish.copy(name = name, syncStatus = SyncStatus.PENDING)
         return try {
             if (dish.id == 0L) {
@@ -116,11 +124,19 @@ class FoodRepository(private val db: AppDatabase) {
         }
     }
 
-    /** Xóa món; ảnh của món tự bị xóa theo (CASCADE). */
+    /**
+     * Xóa món. Món chưa có trên MockAPI thì xóa luôn (ảnh xóa theo, CASCADE);
+     * món đã có thì xóa mềm, đồng bộ xong mới xóa thật.
+     */
     suspend fun deleteDish(dishId: Long): RepoResult<Unit> {
-        val dish = dishDao.getById(dishId) ?: return fail(ValidationError.NOT_FOUND)
+        val item = dishDao.getById(dishId) ?: return fail(ValidationError.NOT_FOUND)
+        if (item.dish.syncStatus == SyncStatus.DELETED) return fail(ValidationError.NOT_FOUND)
         return try {
-            dishDao.delete(dish.dish)
+            if (item.dish.remoteId == null) {
+                dishDao.delete(item.dish)
+            } else {
+                dishDao.update(item.dish.copy(syncStatus = SyncStatus.DELETED))
+            }
             RepoResult.Success(Unit)
         } catch (e: Exception) {
             fail(ValidationError.UNKNOWN)

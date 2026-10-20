@@ -158,6 +158,7 @@ fun DishListScreen(
         }
     ) { padding ->
         Column(Modifier.padding(padding).fillMaxSize()) {
+            SyncBanner()
             OutlinedTextField(
                 value = filter.query,
                 onValueChange = viewModel::onQueryChange,
@@ -230,7 +231,7 @@ private fun FilterPanel(
                 FilterChip(
                     selected = filter.categoryId == category.id,
                     onClick = { viewModel.onCategorySelected(category.id) },
-                    label = { Text(category.name) }
+                    label = { Text(categoryDisplayName(category.name)) }
                 )
             }
         }
@@ -310,7 +311,7 @@ private fun DishCard(item: DishWithImages, categoryName: String, onClick: () -> 
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
-                Text(text = categoryName, style = MaterialTheme.typography.bodySmall)
+                Text(text = categoryDisplayName(categoryName), style = MaterialTheme.typography.bodySmall)
                 Text(text = "${formatPrice(dish.price)} ₫", style = MaterialTheme.typography.bodyLarge)
                 Text(text = "$minutes · $speed", style = MaterialTheme.typography.bodySmall)
                 Text(

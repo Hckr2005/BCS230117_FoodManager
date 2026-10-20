@@ -67,6 +67,13 @@
     <string name="field_category">Loại món</string>
     <string name="field_description">Mô tả</string>
     <string name="field_available">Đang bán</string>
+    <!-- Loại món mẫu -->
+    <string name="cat_main_course">Món chính</string>
+    <string name="cat_drinks">Đồ uống</string>
+    <string name="cat_dessert">Tráng miệng</string>
+    <string name="cat_main_course_desc">Các món cơm, bún, phở và món nước</string>
+    <string name="cat_drinks_desc">Đồ uống nóng và lạnh</string>
+    <string name="cat_dessert_desc">Các món ngọt</string>
 
     <!-- Thông báo lỗi / validation -->
     <string name="error_name_empty">Tên không được để trống</string>
@@ -78,4 +85,11 @@
     <string name="error_category_in_use">Loại món này đang được sử dụng nên không thể xóa</string>
     <string name="error_image_url_invalid">Vui lòng nhập đường dẫn ảnh hợp lệ (http hoặc https)</string>
     <string name="error_unknown">Đã xảy ra lỗi. Vui lòng thử lại</string>
+    <!-- Đồng bộ -->
+    <string name="sync_done">Đã đồng bộ với MockAPI</string>
+    <string name="sync_syncing">Đang đồng bộ…</string>
+    <string name="sync_waiting">%1$d thay đổi đang chờ đồng bộ</string>
+    <string name="sync_offline">Không có mạng – thay đổi được lưu trên máy</string>
+    <string name="sync_offline_pending">Không có mạng – đã lưu %1$d thay đổi trên máy, sẽ tự đồng bộ khi có mạng</string>
+    <string name="sync_error">Không kết nối được MockAPI. Dữ liệu vẫn an toàn trên máy, đang thử lại…</string>
 </resources>

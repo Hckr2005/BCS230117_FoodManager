@@ -68,6 +68,13 @@
     <string name="field_category">Category</string>
     <string name="field_description">Description</string>
     <string name="field_available">Available for sale</string>
+    <!-- Loại món mẫu -->
+    <string name="cat_main_course">Main Course</string>
+    <string name="cat_drinks">Drinks</string>
+    <string name="cat_dessert">Dessert</string>
+    <string name="cat_main_course_desc">Rice, noodle and soup dishes</string>
+    <string name="cat_drinks_desc">Hot and cold beverages</string>
+    <string name="cat_dessert_desc">Sweet dishes</string>
 
     <!-- Thông báo lỗi / validation -->
     <string name="error_name_empty">Name must not be empty</string>
@@ -79,4 +86,11 @@
     <string name="error_category_in_use">This category is in use and cannot be deleted</string>
     <string name="error_image_url_invalid">Please enter a valid image URL (http or https)</string>
     <string name="error_unknown">Something went wrong. Please try again</string>
+    <!-- Đồng bộ -->
+    <string name="sync_done">Synced with MockAPI</string>
+    <string name="sync_syncing">Syncing…</string>
+    <string name="sync_waiting">%1$d change(s) waiting to sync</string>
+    <string name="sync_offline">Offline – changes are saved on this device</string>
+    <string name="sync_offline_pending">Offline – %1$d change(s) saved locally, will sync when online</string>
+    <string name="sync_error">Cannot reach MockAPI. Data is safe on this device, retrying…</string>
 </resources>

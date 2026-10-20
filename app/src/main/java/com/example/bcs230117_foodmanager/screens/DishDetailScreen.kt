@@ -302,7 +302,7 @@ private fun DishDetailContent(
         }
 
         Text(dish.name, style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(top = 8.dp))
-        Text(categoryName, style = MaterialTheme.typography.bodyMedium)
+        Text(categoryDisplayName(categoryName), style = MaterialTheme.typography.bodyMedium)
         Text("${formatPrice(dish.price)} ₫", style = MaterialTheme.typography.titleLarge)
         Text("$minutes · $speed", style = MaterialTheme.typography.bodyMedium)
         Text(

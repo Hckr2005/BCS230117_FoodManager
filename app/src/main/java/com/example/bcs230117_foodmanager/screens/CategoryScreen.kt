@@ -107,9 +107,9 @@ fun CategoryScreen(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Column(Modifier.weight(1f)) {
-                                Text(item.category.name, style = MaterialTheme.typography.titleMedium)
+                                Text(categoryDisplayName(item.category.name), style = MaterialTheme.typography.titleMedium)
                                 if (item.category.description.isNotBlank()) {
-                                    Text(item.category.description, style = MaterialTheme.typography.bodySmall)
+                                    Text(categoryDisplayDescription(item.category.name, item.category.description), style = MaterialTheme.typography.bodySmall)
                                 }
                                 Text(
                                     text = stringResource(R.string.category_dish_count, item.dishCount),
@@ -150,7 +150,7 @@ fun CategoryScreen(
         AlertDialog(
             onDismissRequest = { deleteTarget = null },
             title = { Text(stringResource(R.string.delete_category_title)) },
-            text = { Text(stringResource(R.string.delete_category_message, category.name)) },
+            text = { Text(stringResource(R.string.delete_category_message, categoryDisplayName(category.name))) },
             confirmButton = {
                 TextButton(onClick = {
                     viewModel.delete(category.id)
