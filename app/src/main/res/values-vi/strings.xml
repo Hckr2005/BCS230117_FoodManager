@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Danh sách -->
+    <string name="search_hint">Tìm theo tên món</string>
+    <string name="filters">Bộ lọc</string>
+    <string name="sort">Sắp xếp</string>
+    <string name="sort_default">Mặc định</string>
+    <string name="sort_price_asc">Giá: thấp đến cao</string>
+    <string name="sort_price_desc">Giá: cao đến thấp</string>
+    <string name="sort_time_asc">Thời gian chế biến: ngắn nhất trước</string>
+    <string name="filter_all">Tất cả</string>
+    <string name="filter_available_only">Chỉ món đang bán</string>
+    <string name="filter_min_price">Giá thấp nhất</string>
+    <string name="filter_max_price">Giá cao nhất</string>
+    <string name="filter_price_range_error">Giá thấp nhất không được lớn hơn giá cao nhất</string>
+    <string name="filter_clear">Xóa bộ lọc</string>
+    <string name="label_quick">Nhanh</string>
+    <string name="label_regular">Thông thường</string>
+    <string name="minutes_format">%1$d phút</string>
+    <string name="status_available">Đang bán</string>
+    <string name="status_unavailable">Ngừng bán</string>
+    <string name="empty_no_dishes">Chưa có món ăn nào. Bấm + để thêm.</string>
+    <string name="empty_no_match">Không có món nào phù hợp với bộ lọc.</string>
+    <string name="add_dish">Thêm món</string>
+
+    <!-- Chung -->
+    <string name="back">Quay lại</string>
+    <string name="edit">Sửa</string>
+    <string name="delete">Xóa</string>
+    <string name="save">Lưu</string>
+    <string name="cancel">Hủy</string>
+    <string name="add">Thêm</string>
+    <string name="language">Ngôn ngữ</string>
+
+    <!-- Chi tiết -->
+    <string name="detail_title">Chi tiết món ăn</string>
+    <string name="images">Hình ảnh</string>
+    <string name="no_images">Chưa có ảnh</string>
+    <string name="thumbnail">Ảnh đại diện</string>
+    <string name="no_description">Chưa có mô tả</string>
+    <string name="delete_title">Xóa món ăn?</string>
+    <string name="delete_message">Xóa \"%1$s\"? Hành động này không thể hoàn tác.</string>
+
+    <!-- Quản lý ảnh -->
+    <string name="add_image">Thêm ảnh</string>
+    <string name="image_url">Đường dẫn ảnh (URL)</string>
+    <string name="set_thumbnail">Đặt làm ảnh đại diện</string>
+    <string name="delete_image">Xóa ảnh</string>
+
+    <!-- Loại món -->
+    <string name="categories">Loại món</string>
+    <string name="add_category">Thêm loại món</string>
+    <string name="edit_category">Sửa loại món</string>
+    <string name="category_name">Tên loại món</string>
+    <string name="category_description">Mô tả</string>
+    <string name="category_dish_count">%1$d món</string>
+    <string name="no_categories">Chưa có loại món nào. Bấm + để thêm.</string>
+    <string name="delete_category_title">Xóa loại món?</string>
+    <string name="delete_category_message">Xóa loại món \"%1$s\"?</string>
+
+    <!-- Form -->
+    <string name="form_add_title">Thêm món ăn</string>
+    <string name="form_edit_title">Sửa món ăn</string>
+    <string name="field_name">Tên món</string>
+    <string name="field_price">Giá (₫)</string>
+    <string name="field_time">Thời gian chế biến (phút)</string>
+    <string name="field_category">Loại món</string>
+    <string name="field_description">Mô tả</string>
+    <string name="field_available">Đang bán</string>
+
+    <!-- Thông báo lỗi / validation -->
+    <string name="error_name_empty">Tên không được để trống</string>
+    <string name="error_name_duplicate">Món ăn cùng tên đã tồn tại trong loại này</string>
+    <string name="error_price_invalid">Giá phải lớn hơn 0</string>
+    <string name="error_time_invalid">Thời gian chế biến phải lớn hơn 0</string>
+    <string name="error_category_invalid">Vui lòng chọn loại món hợp lệ</string>
+    <string name="error_not_found">Không tìm thấy dữ liệu này</string>
+    <string name="error_category_in_use">Loại món này đang được sử dụng nên không thể xóa</string>
+    <string name="error_image_url_invalid">Vui lòng nhập đường dẫn ảnh hợp lệ (http hoặc https)</string>
+    <string name="error_unknown">Đã xảy ra lỗi. Vui lòng thử lại</string>
+</resources>

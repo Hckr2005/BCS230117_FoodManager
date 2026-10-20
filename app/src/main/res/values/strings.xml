@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">BCS230117_FoodManager</string>
+
+    <!-- Danh sách -->
+    <string name="search_hint">Search by dish name</string>
+    <string name="filters">Filters</string>
+    <string name="sort">Sort</string>
+    <string name="sort_default">Default</string>
+    <string name="sort_price_asc">Price: low to high</string>
+    <string name="sort_price_desc">Price: high to low</string>
+    <string name="sort_time_asc">Preparation time: shortest first</string>
+    <string name="filter_all">All</string>
+    <string name="filter_available_only">Available only</string>
+    <string name="filter_min_price">Min price</string>
+    <string name="filter_max_price">Max price</string>
+    <string name="filter_price_range_error">Min price must not be greater than max price</string>
+    <string name="filter_clear">Clear filters</string>
+    <string name="label_quick">Quick</string>
+    <string name="label_regular">Regular</string>
+    <string name="minutes_format">%1$d min</string>
+    <string name="status_available">Available</string>
+    <string name="status_unavailable">Unavailable</string>
+    <string name="empty_no_dishes">No dishes yet. Tap + to add one.</string>
+    <string name="empty_no_match">No dishes match your filters.</string>
+    <string name="add_dish">Add dish</string>
+
+    <!-- Chung -->
+    <string name="back">Back</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
+    <string name="language">Language</string>
+
+    <!-- Chi tiết -->
+    <string name="detail_title">Dish details</string>
+    <string name="images">Images</string>
+    <string name="no_images">No images</string>
+    <string name="thumbnail">Thumbnail</string>
+    <string name="no_description">No description</string>
+    <string name="delete_title">Delete dish?</string>
+    <string name="delete_message">Delete \"%1$s\"? This action cannot be undone.</string>
+
+    <!-- Quản lý ảnh -->
+    <string name="add_image">Add image</string>
+    <string name="image_url">Image URL</string>
+    <string name="set_thumbnail">Set as thumbnail</string>
+    <string name="delete_image">Delete image</string>
+
+    <!-- Loại món -->
+    <string name="categories">Categories</string>
+    <string name="add_category">Add category</string>
+    <string name="edit_category">Edit category</string>
+    <string name="category_name">Category name</string>
+    <string name="category_description">Description</string>
+    <string name="category_dish_count">%1$d dish(es)</string>
+    <string name="no_categories">No categories yet. Tap + to add one.</string>
+    <string name="delete_category_title">Delete category?</string>
+    <string name="delete_category_message">Delete category \"%1$s\"?</string>
+
+    <!-- Form -->
+    <string name="form_add_title">Add dish</string>
+    <string name="form_edit_title">Edit dish</string>
+    <string name="field_name">Name</string>
+    <string name="field_price">Price (₫)</string>
+    <string name="field_time">Preparation time (minutes)</string>
+    <string name="field_category">Category</string>
+    <string name="field_description">Description</string>
+    <string name="field_available">Available for sale</string>
+
+    <!-- Thông báo lỗi / validation -->
+    <string name="error_name_empty">Name must not be empty</string>
+    <string name="error_name_duplicate">A dish with this name already exists in this category</string>
+    <string name="error_price_invalid">Price must be greater than 0</string>
+    <string name="error_time_invalid">Preparation time must be greater than 0</string>
+    <string name="error_category_invalid">Please select a valid category</string>
+    <string name="error_not_found">This item was not found</string>
+    <string name="error_category_in_use">This category is in use and cannot be deleted</string>
+    <string name="error_image_url_invalid">Please enter a valid image URL (http or https)</string>
+    <string name="error_unknown">Something went wrong. Please try again</string>
+</resources>
